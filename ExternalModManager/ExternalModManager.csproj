@@ -6,13 +6,80 @@
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
 
-        <PublishSingleFile>true</PublishSingleFile>
-        <SelfContained>true</SelfContained>
-        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+<!--        <PublishSingleFile>true</PublishSingleFile>-->
+<!--        <SelfContained>true</SelfContained>-->
+<!--        <RuntimeIdentifier>win-x64</RuntimeIdentifier>-->
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="WPF-UI" Version="3.0.0-preview.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Images\transaction_page.png" />
+      <Content Include="Images\transaction_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\customer_page.png" />
+      <Content Include="Images\customer_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\home_page.png" />
+      <Content Include="Images\home_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_customer.png" />
+      <Content Include="Images\img_customer.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_home.png" />
+      <Content Include="Images\img_home.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_order.png" />
+      <Content Include="Images\img_order.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_product.png" />
+      <Content Include="Images\img_product.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_setting.png" />
+      <Content Include="Images\img_setting.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_shipment.png" />
+      <Content Include="Images\img_shipment.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\img_transaction.png" />
+      <Content Include="Images\img_transaction.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\order_page.png" />
+      <Content Include="Images\order_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\product_page.png" />
+      <Content Include="Images\product_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\setting_page.png" />
+      <Content Include="Images\setting_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\shipment_page.png" />
+      <Content Include="Images\shipment_page.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\shutdown_def.png" />
+      <Content Include="Images\shutdown_def.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\shutdown_mo.png" />
+      <Content Include="Images\shutdown_mo.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

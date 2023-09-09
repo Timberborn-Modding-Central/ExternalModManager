@@ -9,67 +9,67 @@
         Title="MainWindow"
         Height="600"
         Width="850"
-        AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        Background="Transparent">
 
-    <!-- <Window.DataContext> -->
-    <!--     <vm:NavigationVM /> -->
-    <!-- </Window.DataContext> -->
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:NavigationVM />
+    </Window.DataContext>
 
     <Grid>
-        <!-- <Border Background="#212529" CornerRadius="20" /> -->
-        <!-- -->
-        <!-- <Grid> -->
-        <!-- -->
-        <!--     <Grid.ColumnDefinitions> -->
-        <!--         <ColumnDefinition Width="228" /> -->
-        <!--         <ColumnDefinition Width="622" /> -->
-        <!--     </Grid.ColumnDefinitions> -->
-        <!-- -->
-        <!--     <Grid Grid.Column="0" HorizontalAlignment="Left" Width="228"> -->
-        <!--         <StackPanel Height="400" Width="228"> -->
-        <!--             ~1~ <menu:Btn Style="{StaticResource BtnStyle}" @1@ -->
-        <!--             ~1~           Command="{Binding HomeCommand}" @1@ -->
-        <!--             ~1~           IsChecked="True"> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~     <Grid> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~         <Image Source="Images/img_home.png" @1@ -->
-        <!--             ~1~                Style="{StaticResource Image_Style}" /> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~         <TextBlock Text="Home" @1@ -->
-        <!--             ~1~                    Style="{StaticResource Text_Style}" /> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~     </Grid> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~ </menu:Btn> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~ <menu:Btn Style="{StaticResource BtnStyle}" @1@ -->
-        <!--             ~1~           Command="{Binding CustomersCommand}"> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~     <Grid> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~         <Image Source="Images/img_customer.png" @1@ -->
-        <!--             ~1~                Style="{StaticResource Image_Style}" /> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~         <TextBlock Text="Customer" @1@ -->
-        <!--             ~1~                    Style="{StaticResource Text_Style}" /> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~     </Grid> @1@ -->
-        <!--             ~1~ @1@ -->
-        <!--             ~1~ </menu:Btn> @1@ -->
-        <!--         </StackPanel> -->
-        <!--     </Grid> -->
-        <!-- -->
-        <!--     <Grid Grid.Column="1"> -->
-        <!-- -->
-        <!--         ~1~ <ContentControl x:Name="Pages" Content="{Binding CurrentView}" /> @1@ -->
-        <!-- -->
-        <!--     </Grid> -->
-        <!--      -->
-        <!--      -->
-        <!-- </Grid> -->
+        <Border Background="#212529" />
+        
+        <Grid>
+        
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228" />
+                <ColumnDefinition Width="622" />
+            </Grid.ColumnDefinitions>
+        
+            <Grid Grid.Column="0" HorizontalAlignment="Left" Width="228">
+                <Border Background="#272B2F" />
+                
+                <StackPanel Height="400" Width="228">
+                    <menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding HomeCommand}"
+                              IsChecked="True">
+                    
+                        <Grid>
+                    
+                            <Image Source="Images/img_home.png"
+                                   Style="{StaticResource Image_Style}" />
+                    
+                            <TextBlock Text="Home"
+                                       Style="{StaticResource Text_Style}" />
+                    
+                        </Grid>
+                    
+                    </menu:Btn>
+                    
+                    <menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding CustomersCommand}">
+                    
+                        <Grid>
+                    
+                            <Image Source="Images/img_customer.png"
+                                   Style="{StaticResource Image_Style}" />
+                    
+                            <TextBlock Text="Customer"
+                                       Style="{StaticResource Text_Style}" />
+                    
+                        </Grid>
+                    
+                    </menu:Btn>
+                </StackPanel>
+            </Grid>
+        
+            <Grid Grid.Column="1">
+        
+                <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
+        
+            </Grid>
+        
+        
+        </Grid>
     </Grid>
 </Window>

@@ -3,27 +3,73 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExternalModManager"
+        xmlns:vm="clr-namespace:ExternalModManager.ViewModel"
+        xmlns:menu="clr-namespace:ExternalModManager.Utilities"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#1f2d3b">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <StackPanel Margin="10">
-                <Label Foreground="LightGray" FontWeight="Bold">MAPS</Label>
-                <Button Margin="0 5 0 0">Installed</Button>
-                <Button Margin="0 5 0 0">Browse</Button>
-                
-                <Label Margin="0 15 0 0" Foreground="LightGray" FontWeight="Bold">MODS</Label>
-                <Button Margin="0 5 0 0">Installed</Button>
-                <Button Margin="0 5 0 0">Browse</Button>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Frame Source="Pages/ModPage.xaml"></Frame>
-        </Grid>
+        Title="MainWindow"
+        Height="600"
+        Width="850"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
+
+    <!-- <Window.DataContext> -->
+    <!--     <vm:NavigationVM /> -->
+    <!-- </Window.DataContext> -->
+
+    <Grid>
+        <!-- <Border Background="#212529" CornerRadius="20" /> -->
+        <!-- -->
+        <!-- <Grid> -->
+        <!-- -->
+        <!--     <Grid.ColumnDefinitions> -->
+        <!--         <ColumnDefinition Width="228" /> -->
+        <!--         <ColumnDefinition Width="622" /> -->
+        <!--     </Grid.ColumnDefinitions> -->
+        <!-- -->
+        <!--     <Grid Grid.Column="0" HorizontalAlignment="Left" Width="228"> -->
+        <!--         <StackPanel Height="400" Width="228"> -->
+        <!--             ~1~ <menu:Btn Style="{StaticResource BtnStyle}" @1@ -->
+        <!--             ~1~           Command="{Binding HomeCommand}" @1@ -->
+        <!--             ~1~           IsChecked="True"> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~     <Grid> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~         <Image Source="Images/img_home.png" @1@ -->
+        <!--             ~1~                Style="{StaticResource Image_Style}" /> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~         <TextBlock Text="Home" @1@ -->
+        <!--             ~1~                    Style="{StaticResource Text_Style}" /> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~     </Grid> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~ </menu:Btn> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~ <menu:Btn Style="{StaticResource BtnStyle}" @1@ -->
+        <!--             ~1~           Command="{Binding CustomersCommand}"> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~     <Grid> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~         <Image Source="Images/img_customer.png" @1@ -->
+        <!--             ~1~                Style="{StaticResource Image_Style}" /> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~         <TextBlock Text="Customer" @1@ -->
+        <!--             ~1~                    Style="{StaticResource Text_Style}" /> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~     </Grid> @1@ -->
+        <!--             ~1~ @1@ -->
+        <!--             ~1~ </menu:Btn> @1@ -->
+        <!--         </StackPanel> -->
+        <!--     </Grid> -->
+        <!-- -->
+        <!--     <Grid Grid.Column="1"> -->
+        <!-- -->
+        <!--         ~1~ <ContentControl x:Name="Pages" Content="{Binding CurrentView}" /> @1@ -->
+        <!-- -->
+        <!--     </Grid> -->
+        <!--      -->
+        <!--      -->
+        <!-- </Grid> -->
     </Grid>
 </Window>

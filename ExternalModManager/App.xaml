@@ -6,8 +6,6 @@
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Navigation/NavigationDataTemplate.xaml" />
-                
                 <ResourceDictionary Source="Resources/Styles/Buttons/NavigationButton.xaml" />
                 <ResourceDictionary Source="Resources/Styles/PageTransitions/DefaultPageTransition.xaml" />
                 

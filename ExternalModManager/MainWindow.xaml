@@ -9,41 +9,37 @@
         Height="600"
         Width="850"
         WindowStartupLocation="CenterScreen">
-    
+
     <Grid>
         <Border Background="#212529" />
-        
+
         <Grid>
-        
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228" />
                 <ColumnDefinition Width="622" />
             </Grid.ColumnDefinitions>
-        
+
             <Grid Grid.Column="0" HorizontalAlignment="Left" Width="228">
                 <Border Background="#272B2F" />
-                
+
                 <StackPanel Height="400" Width="228">
-                <buttons:NavigationButton
-                    Content="Test"
-                    ImageSource="/Resources/Images/img_customer.png"
-                    Command="{Binding NavigateHomeCommand}"
-                    IsChecked="True" />
-                
-                <buttons:NavigationButton
-                    Content="Test"
-                    ImageSource="/Resources/Images/img_customer.png"
-                    Command="{Binding NavigateCustomerCommand}" />
+
+                    <buttons:NavigationButton
+                        Content="Mods"
+                        ImageSource="/Resources/Images/img_customer.png"
+                        Command="{Binding NavigateHomeCommand}"
+                        IsChecked="True" />
+
+                    <buttons:NavigationButton
+                        Content="Maps"
+                        ImageSource="/Resources/Images/img_customer.png"
+                        Command="{Binding NavigateCustomerCommand}" />
                 </StackPanel>
             </Grid>
-        
+
             <Grid Grid.Column="1">
-        
                 <ContentControl x:Name="Pages" Content="{Binding NavigationService.CurrentView}" />
-        
             </Grid>
-        
-        
         </Grid>
     </Grid>
 </Window>

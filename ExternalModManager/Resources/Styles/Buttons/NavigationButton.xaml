@@ -4,8 +4,8 @@
                     xmlns:view="clr-namespace:ExternalModManager.MVVM.View"
                     xmlns:viewModel="clr-namespace:ExternalModManager.MVVM.ViewModel">
     
-    <DataTemplate DataType="{x:Type viewModel:HomeVM}">
-        <view:Home />
+    <DataTemplate DataType="{x:Type viewModel:ModsViewModel}">
+        <view:ModsView />
     </DataTemplate>
 
     <Style TargetType="buttons:NavigationButton">
@@ -30,7 +30,6 @@
                         </Border.Background>
 
                         <Grid>
-
                             <Border x:Name="Indicator"
                                     Height="35"
                                     Width="4"

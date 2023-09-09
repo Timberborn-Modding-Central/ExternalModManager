@@ -5,46 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using ExternalModManager.Utilities;
 using System.Windows.Input;
+using ExternalModManager.Core;
 
 namespace ExternalModManager.ViewModel
 {
     class NavigationVM : ViewModelBase
     {
-        private object _currentView;
-        public object CurrentView
+        private INavigationService _navigationService;
+
+        public INavigationService NavigationService
         {
-            get { return _currentView; }
-            set { _currentView = value; OnPropertyChanged(); }
+            get => _navigationService;
+            set
+            {
+                _navigationService = value;
+                OnPropertyChanged();
+            }
         }
-
-        public ICommand HomeCommand { get; set; }
-        public ICommand CustomersCommand { get; set; }
-        public ICommand ProductsCommand { get; set; }
-        public ICommand OrdersCommand { get; set; }
-        public ICommand TransactionsCommand { get; set; }
-        public ICommand ShipmentsCommand { get; set; }
-        public ICommand SettingsCommand { get; set; }
-
-        private void Home(object obj) => CurrentView = new HomeVM();
-        private void Customer(object obj) => CurrentView = new OrderVM();
-        private void Product(object obj) => CurrentView = new ProductVM();
-        private void Order(object obj) => CurrentView = new OrderVM();
-        private void Transaction(object obj) => CurrentView = new TransactionVM();
-        private void Shipment(object obj) => CurrentView = new ShipmentVM();
-        private void Setting(object obj) => CurrentView = new SettingVM();
-
-        public NavigationVM()
+        
+        public RelayCommand NavigateHomeCommand { get; set; }
+        public RelayCommand NavigateCustomerCommand { get; set; }
+        
+        public NavigationVM(INavigationService navigationService)
         {
-            HomeCommand = new RelayCommand(Home);
-            CustomersCommand = new RelayCommand(Customer);
-            ProductsCommand = new RelayCommand(Product);
-            OrdersCommand = new RelayCommand(Order);
-            TransactionsCommand = new RelayCommand(Transaction);
-            ShipmentsCommand = new RelayCommand(Shipment);
-            SettingsCommand = new RelayCommand(Setting);
-
-            // Startup Page
-            CurrentView = new HomeVM();
+            _navigationService = navigationService;
+            NavigationService.NavigateTo<HomeVM>();
+            NavigateHomeCommand = new RelayCommand(o => { NavigationService.NavigateTo<HomeVM>(); });
+            NavigateCustomerCommand = new RelayCommand(o => { NavigationService.NavigateTo<CustomerVM>(); });
         }
     }
 }

@@ -3,41 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vm="clr-namespace:ExternalModManager.ViewModel"
              mc:Ignorable="d"
              d:DesignHeight="600"
              d:DesignWidth="622"
-             Style="{StaticResource Page_Style}">
-
-    <UserControl.DataContext>
-        <vm:CustomerVM />
-    </UserControl.DataContext>
-    
+             Style="{StaticResource PageStyle}">
     <Grid Margin="15">
-
-        <Border CornerRadius="0,20,20,0">
-            <Border.Background>
-                <ImageBrush ImageSource="/Images/customer_page.png"
-                            Stretch="None" />
-            </Border.Background>
-        </Border>
-
-        <TextBlock Text="Customer ID  :"
-                   Foreground="#DBDBDB"
-                   FontSize="12"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   FontFamily="/Fonts/#Rubik Medium"
-                   Margin="70,138,0,0" />
-
-        <TextBlock Text="{Binding CustomerID}"
-                   Foreground="#CED565"
-                   FontSize="12"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   FontFamily="/Fonts/#Rubik Medium"
-                   Margin="160,138,0,0" />
-     
-
+        <StackPanel>
+            <TextBox Text="{Binding Search, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            
+            <Label Content="{Binding OutputSearch, Mode=OneWay}" Foreground="White" FontSize="30"></Label>
+            <Label Content="{Binding OutputSearchSecond, Mode=OneWay}" Foreground="White" FontSize="30"></Label>
+            <Label Content="{Binding Users, Mode=OneWay}" Foreground="White" FontSize="30"></Label>
+            
+            <Button Content="Click" Command="{Binding GetString}" />
+        </StackPanel>
     </Grid>
 </UserControl>

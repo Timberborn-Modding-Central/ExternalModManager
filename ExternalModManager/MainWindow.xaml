@@ -9,13 +9,8 @@
         Title="MainWindow"
         Height="600"
         Width="850"
-
         WindowStartupLocation="CenterScreen">
-
-    <Window.DataContext>
-        <vm:NavigationVM />
-    </Window.DataContext>
-
+    
     <Grid>
         <Border Background="#212529" />
         
@@ -31,7 +26,7 @@
                 
                 <StackPanel Height="400" Width="228">
                     <menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding HomeCommand}"
+                              Command="{Binding NavigateHomeCommand}"
                               IsChecked="True">
                     
                         <Grid>
@@ -47,7 +42,7 @@
                     </menu:Btn>
                     
                     <menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding CustomersCommand}">
+                              Command="{Binding NavigateCustomerCommand}">
                     
                         <Grid>
                     
@@ -60,12 +55,14 @@
                         </Grid>
                     
                     </menu:Btn>
+                    
+                    <Button Content="Hello world" Height="25" />
                 </StackPanel>
             </Grid>
         
             <Grid Grid.Column="1">
         
-                <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
+                <ContentControl x:Name="Pages" Content="{Binding NavigationService.CurrentView}" />
         
             </Grid>
         

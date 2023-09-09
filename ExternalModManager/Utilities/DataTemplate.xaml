@@ -18,17 +18,5 @@
     <DataTemplate DataType="{x:Type vm:OrderVM}">
         <view:Orders />
     </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:TransactionVM}">
-        <view:Transactions />
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:ShipmentVM}">
-        <view:Shipments />
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:SettingVM}">
-        <view:Settings />
-    </DataTemplate>
     
 </ResourceDictionary>

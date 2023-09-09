@@ -3,27 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExternalModManager"
+        xmlns:buttons="clr-namespace:ExternalModManager.Resources.Styles.Buttons"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#1f2d3b">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <StackPanel Margin="10">
-                <Label Foreground="LightGray" FontWeight="Bold">MAPS</Label>
-                <Button Margin="0 5 0 0">Installed</Button>
-                <Button Margin="0 5 0 0">Browse</Button>
-                
-                <Label Margin="0 15 0 0" Foreground="LightGray" FontWeight="Bold">MODS</Label>
-                <Button Margin="0 5 0 0">Installed</Button>
-                <Button Margin="0 5 0 0">Browse</Button>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Frame Source="Pages/ModPage.xaml"></Frame>
+        Title="MainWindow"
+        Height="600"
+        Width="850"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Border Background="#212529" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228" />
+                <ColumnDefinition Width="622" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" HorizontalAlignment="Left" Width="228">
+                <Border Background="#272B2F" />
+
+                <StackPanel Height="400" Width="228">
+
+                    <buttons:NavigationButton
+                        Content="Mods"
+                        ImageSource="/Resources/Images/img_customer.png"
+                        Command="{Binding NavigateHomeCommand}"
+                        IsChecked="True" />
+
+                    <buttons:NavigationButton
+                        Content="Maps"
+                        ImageSource="/Resources/Images/img_customer.png"
+                        Command="{Binding NavigateCustomerCommand}" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <ContentControl x:Name="Pages" Content="{Binding NavigationService.CurrentView}" />
+            </Grid>
         </Grid>
     </Grid>
 </Window>

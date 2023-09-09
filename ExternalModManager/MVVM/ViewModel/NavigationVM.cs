@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExternalModManager.Utilities;
-using System.Windows.Input;
-using ExternalModManager.Core;
+﻿using ExternalModManager.Core;
+using ExternalModManager.Navigation;
 
-namespace ExternalModManager.ViewModel
+namespace ExternalModManager.MVVM.ViewModel
 {
     class NavigationVM : ViewModelBase
     {
-        private INavigationService _navigationService;
+        private NavigationService _navigationService;
 
-        public INavigationService NavigationService
+        public NavigationService NavigationService
         {
             get => _navigationService;
             set
@@ -26,7 +20,7 @@ namespace ExternalModManager.ViewModel
         public RelayCommand NavigateHomeCommand { get; set; }
         public RelayCommand NavigateCustomerCommand { get; set; }
         
-        public NavigationVM(INavigationService navigationService)
+        public NavigationVM(NavigationService navigationService)
         {
             _navigationService = navigationService;
             NavigationService.NavigateTo<HomeVM>();

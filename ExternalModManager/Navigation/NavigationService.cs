@@ -1,17 +1,11 @@
 using System;
-using ExternalModManager.Utilities;
+using ExternalModManager.Core;
+using ExternalModManager.MVVM.ViewModel;
 using ReactiveUI;
 
-namespace ExternalModManager.Core;
+namespace ExternalModManager.Navigation;
 
-public interface INavigationService
-{
-    ReactiveObject CurrentView { get; }
-
-    void NavigateTo<T>() where T : ReactiveObject;
-}
-
-public class NavigationService : ViewModelBase, INavigationService
+public class NavigationService : ViewModelBase
 {
     private readonly Func<Type, ReactiveObject> _viewModelFactory;
     
@@ -30,6 +24,9 @@ public class NavigationService : ViewModelBase, INavigationService
     public NavigationService(Func<Type, ReactiveObject> viewModelFactory)
     {
         _viewModelFactory = viewModelFactory;
+
+        // First page
+        _currentView = _viewModelFactory.Invoke(typeof(HomeVM));
     }
     
     public void NavigateTo<TViewModel>() where TViewModel : ReactiveObject

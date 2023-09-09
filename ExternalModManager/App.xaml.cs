@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Diagnostics.Metrics;
 using System.Windows;
-using ExternalModManager.Core;
-using ExternalModManager.Utilities;
-using ExternalModManager.ViewModel;
+using ExternalModManager.MVVM.ViewModel;
+using ExternalModManager.Navigation;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
 
@@ -20,14 +18,13 @@ public partial class App : Application
         {
             DataContext = serviceProvider.GetRequiredService<NavigationVM>()
         });
+        
         services.AddSingleton<NavigationVM>();
-        services.AddSingleton<GlobalCounter>();
-        services.AddSingleton<HomeVM>();
 
         services.AddSingleton<CustomerVM>();
-        services.AddSingleton<OrderVM>();
+        services.AddSingleton<HomeVM>();
 
-        services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<NavigationService>();
         services.AddSingleton<Func<Type, ReactiveObject>>(serviceProvider => viewModelType => (ReactiveObject) serviceProvider.GetRequiredService(viewModelType));
         
         _serviceProvider = services.BuildServiceProvider();
@@ -39,11 +36,5 @@ public partial class App : Application
         mainWindow.Show();
         
         base.OnStartup(e);
-    }
-    
-    protected override async void OnExit(ExitEventArgs e)
-    {
-    
-        base.OnExit(e);
     }
 }

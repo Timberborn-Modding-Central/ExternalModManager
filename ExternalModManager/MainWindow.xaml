@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:ExternalModManager.ViewModel"
-        xmlns:menu="clr-namespace:ExternalModManager.Utilities"
+        xmlns:buttons="clr-namespace:ExternalModManager.Resources.Styles.Buttons"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="600"
@@ -25,38 +24,16 @@
                 <Border Background="#272B2F" />
                 
                 <StackPanel Height="400" Width="228">
-                    <menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding NavigateHomeCommand}"
-                              IsChecked="True">
-                    
-                        <Grid>
-                    
-                            <Image Source="Images/img_home.png"
-                                   Style="{StaticResource Image_Style}" />
-                    
-                            <TextBlock Text="Home"
-                                       Style="{StaticResource Text_Style}" />
-                    
-                        </Grid>
-                    
-                    </menu:Btn>
-                    
-                    <menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding NavigateCustomerCommand}">
-                    
-                        <Grid>
-                    
-                            <Image Source="Images/img_customer.png"
-                                   Style="{StaticResource Image_Style}" />
-                    
-                            <TextBlock Text="Customer"
-                                       Style="{StaticResource Text_Style}" />
-                    
-                        </Grid>
-                    
-                    </menu:Btn>
-                    
-                    <Button Content="Hello world" Height="25" />
+                <buttons:NavigationButton
+                    Content="Test"
+                    ImageSource="/Resources/Images/img_customer.png"
+                    Command="{Binding NavigateHomeCommand}"
+                    IsChecked="True" />
+                
+                <buttons:NavigationButton
+                    Content="Test"
+                    ImageSource="/Resources/Images/img_customer.png"
+                    Command="{Binding NavigateCustomerCommand}" />
                 </StackPanel>
             </Grid>
         

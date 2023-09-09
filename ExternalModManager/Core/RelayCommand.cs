@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace ExternalModManager.Utilities;
+namespace ExternalModManager.Core;
 
 public class RelayCommand : ICommand
 {

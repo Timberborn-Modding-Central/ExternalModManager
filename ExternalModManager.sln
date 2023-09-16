@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalModManager", "ExternalModManager\ExternalModManager.csproj", "{31CD0B78-CD52-41EF-8A5C-753402F4C54A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalModManager", "ExternalModManager\ExternalModManager.csproj", "{71BD474F-9248-4E9F-99A8-8DCF4798CEDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{31CD0B78-CD52-41EF-8A5C-753402F4C54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31CD0B78-CD52-41EF-8A5C-753402F4C54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31CD0B78-CD52-41EF-8A5C-753402F4C54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31CD0B78-CD52-41EF-8A5C-753402F4C54A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71BD474F-9248-4E9F-99A8-8DCF4798CEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71BD474F-9248-4E9F-99A8-8DCF4798CEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71BD474F-9248-4E9F-99A8-8DCF4798CEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71BD474F-9248-4E9F-99A8-8DCF4798CEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

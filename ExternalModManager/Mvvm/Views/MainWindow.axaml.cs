@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace ExternalModManager.Views;
+namespace ExternalModManager.Mvvm.Views;
 
 public partial class MainWindow : Window
 {

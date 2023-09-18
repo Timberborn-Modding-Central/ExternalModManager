@@ -38,6 +38,10 @@
             <Button Content="Go to page" Command="{Binding GoNext}" />
             <Button Content="Go to page, clear history" Command="{Binding GoNextEmpty}" />
             <Button Content="Go back in history" Command="{Binding GoBack}" />
+            
+            <avalonia:Icon Value="fa-brands fa-twitter" Foreground="white" FontSize="24"  />
+            
+            <avalonia:Icon Value="fa-spinner" Animation="Pulse" Foreground="white" FontSize="24" />
         </StackPanel>
     </Grid>
 </Window>

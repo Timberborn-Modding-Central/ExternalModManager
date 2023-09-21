@@ -47,10 +47,10 @@
                 
                 <!-- Menu Header -->
                 <Style Selector="Border.MenuHeader">
-                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Height" Value="60"/>
                     <Setter Property="Margin" Value="10"/>
                     <Setter Property="CornerRadius" Value="5"/>
-                    <Setter Property="Background" Value="#7e56da"/>
+                    <!-- <Setter Property="Background" Value="#7e56da"/> -->
                 </Style>
                 <Style Selector="Border.MenuHeader WrapPanel">
                     <Setter Property="Width" Value="{Binding $parent[Border].Bounds.Width}"/>
@@ -162,9 +162,9 @@
             <Button Content="Go to page" Command="{Binding GoNext}" />
             <Button Content="Go to page, clear history" Command="{Binding GoNextEmpty}" />
             <Button Content="Go back in history" Command="{Binding GoBack}" />
-            
+        
             <avalonia:Icon Value="fa-brands fa-twitter" Foreground="white" FontSize="24"  />
-            
+        
             <avalonia:Icon Value="fa-spinner" Animation="Pulse" Foreground="white" FontSize="24" />
         </StackPanel>
     </Grid>

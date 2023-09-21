@@ -10,8 +10,8 @@ public class MainWindowViewModel : ViewModelBase
     
     // The command that navigates a user to first view model.
     public ReactiveCommand<Unit, IRoutableViewModel> GoNext { get; }
-    
     public ReactiveCommand<Unit, IRoutableViewModel> GoNextEmpty { get; }
+    
     
     public ReactiveCommand<Unit, IRoutableViewModel?> GoBack => NavigationService.Router.NavigateBack;
     
@@ -21,7 +21,6 @@ public class MainWindowViewModel : ViewModelBase
         NavigationService = navigationService;
         
         GoNext = ReactiveCommand.CreateFromObservable(NavigationService.NavigateTo<FirstPageViewModel>);
-        
         GoNextEmpty = ReactiveCommand.CreateFromObservable(NavigationService.NavigateAndResetTo<FirstPageViewModel>);
     }
 

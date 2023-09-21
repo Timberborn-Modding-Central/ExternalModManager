@@ -4,11 +4,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:ExternalModManager.Mvvm.ViewModels"
         xmlns:reactiveUi="http://reactiveui.net"
+        xmlns:avalonia="https://github.com/projektanker/icons.avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExternalModManager.Mvvm.Views.MainWindow"
         x:DataType="viewModels:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="ExternalModManager">
+        Title="ExternalModManager"
+        
+        Background="#54389e">
 
     <Design.DataContext>
         <viewModels:MainWindowViewModel/>
@@ -19,14 +22,135 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <reactiveUi:RoutedViewHost Grid.Row="0" Router="{Binding NavigationService.Router}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Row="0" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.Styles>
+                <!-- Main Containers -->
+                <Style Selector="Grid">
+                    <Setter Property="Background" Value="#6941c7"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                </Style>
+                <Style Selector="StackPanel">
+                    <Setter Property="Width" Value="230"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+                
+                <!-- Menu Header -->
+                <Style Selector="Border.MenuHeader">
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="Background" Value="#7e56da"/>
+                </Style>
+                <Style Selector="Border.MenuHeader WrapPanel">
+                    <Setter Property="Width" Value="{Binding $parent[Border].Bounds.Width}"/>
+                    <Setter Property="Height" Value="{Binding $parent[Border].Bounds.Height}"/>
+                </Style>
+                <Style Selector="Border.MenuHeader TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="20"/>
+                </Style>
+                
+                <!-- Menu Body -->
+                <Style Selector="Button">
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Margin" Value="10, 5"/>
+                    <Setter Property="Background" Value="#6941c7"/>
+                    <Setter Property="CornerRadius" Value="6"/>
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </Style>
+                <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="#7e56da"/>
+                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                </Style>
+                <Style Selector="Button > WrapPanel">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style Selector="Button > WrapPanel > TextBlock">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="15, 0, 0, 0"/>
+                </Style>
+                <Style Selector="Border.MenuSpacer">
+                    <Setter Property="Height" Value="4"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="CornerRadius" Value="2"/>
+                    <Setter Property="Background" Value="#7e56da"/>
+                </Style>
+            </Grid.Styles>
+            
+            <StackPanel Grid.Row="0">
+                
+                <!-- Header -->
+                <!-- <Border Classes="MenuHeader"> -->
+                <!--     <WrapPanel> -->
+                <!--         <avalonia:Icon Value="fa-solid fa-puzzle-piece" Foreground="white" FontSize="24"/> -->
+                <!--         <TextBlock>Mod Manager</TextBlock> -->
+                <!--     </WrapPanel> -->
+                <!-- </Border> -->
+                <Border Classes="MenuHeader">
+                    <TextBlock>Mod Manager</TextBlock>
+                </Border>
+                
+                <!-- Menu Body -->
+                <Button Command="{Binding GoNextEmpty}">
+                    <WrapPanel>
+                        <avalonia:Icon Value="fa-solid fa-house" Foreground="white" FontSize="24"/>
+                        <TextBlock>Home</TextBlock>
+                    </WrapPanel>
+                </Button>
+                
+                <Border Classes="MenuSpacer"/>
+                
+                <Button Command="{Binding GoNext}">
+                    <WrapPanel>
+                        <avalonia:Icon Value="fa-solid fa-puzzle-piece" Foreground="white" FontSize="24"/>
+                        <TextBlock>Mods</TextBlock>
+                    </WrapPanel>
+                </Button>
+                <Button Command="{Binding GoNext}">
+                    <WrapPanel>
+                        <avalonia:Icon Value="fa-solid fa-map-location-dot" Foreground="white" FontSize="24"/>
+                        <TextBlock>Maps</TextBlock>
+                    </WrapPanel>
+                </Button>
+                <Button Command="{Binding GoNext}">
+                    <WrapPanel>
+                        <avalonia:Icon Value="fa-solid fa-book" Foreground="white" FontSize="24"/>
+                        <TextBlock>Guides</TextBlock>
+                    </WrapPanel>
+                </Button>
+                <Button Command="{Binding GoNext}">
+                    <WrapPanel>
+                        <avalonia:Icon Value="fa-solid fa-rss" Foreground="white" FontSize="24"/>
+                        <TextBlock>Subscriptions</TextBlock>
+                    </WrapPanel>
+                </Button>
+                
+            </StackPanel>
+        </Grid>
+        
+        <reactiveUi:RoutedViewHost Grid.Column="1" Grid.Row="0" Router="{Binding NavigationService.Router}">
             <reactiveUi:RoutedViewHost.DefaultContent>
         
                 <TextBlock Text="Default content" HorizontalAlignment="Center" VerticalAlignment="Center" />
         
             </reactiveUi:RoutedViewHost.DefaultContent>
         </reactiveUi:RoutedViewHost>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="15">
+        
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="15">
             <StackPanel.Styles>
                 <Style Selector="StackPanel > :is(Control)">
                     <Setter Property="Margin" Value="2"/>
@@ -45,3 +169,7 @@
         </StackPanel>
     </Grid>
 </Window>
+
+
+<!-- Notes: -->
+<!-- <Setter Property="Width" Value="{Binding $parent[Grid].Bounds.Width}"/> -->

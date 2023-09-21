@@ -10,7 +10,7 @@
         <viewModels:FirstPageViewModel/>
     </Design.DataContext>
     
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gray">
         <Label Content="{Binding MyFirstString}"></Label>
     </Grid>
 </UserControl>

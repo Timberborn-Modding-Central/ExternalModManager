@@ -149,24 +149,6 @@
         
             </reactiveUi:RoutedViewHost.DefaultContent>
         </reactiveUi:RoutedViewHost>
-        
-        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="15">
-            <StackPanel.Styles>
-                <Style Selector="StackPanel > :is(Control)">
-                    <Setter Property="Margin" Value="2"/>
-                </Style>
-                <Style Selector="StackPanel > TextBlock">
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                </Style>
-            </StackPanel.Styles>
-            <Button Content="Go to page" Command="{Binding GoNext}" />
-            <Button Content="Go to page, clear history" Command="{Binding GoNextEmpty}" />
-            <Button Content="Go back in history" Command="{Binding GoBack}" />
-        
-            <avalonia:Icon Value="fa-brands fa-twitter" Foreground="white" FontSize="24"  />
-        
-            <avalonia:Icon Value="fa-spinner" Animation="Pulse" Foreground="white" FontSize="24" />
-        </StackPanel>
     </Grid>
 </Window>
 

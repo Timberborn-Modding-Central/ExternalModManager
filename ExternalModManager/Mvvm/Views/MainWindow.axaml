@@ -10,89 +10,91 @@
         x:DataType="viewModels:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="ExternalModManager"
-        
+
         Background="#54389e">
 
     <Design.DataContext>
-        <viewModels:MainWindowViewModel/>
+        <viewModels:MainWindowViewModel />
     </Design.DataContext>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <Grid Grid.Row="0" Grid.Column="0" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            
+    <Grid RowDefinitions="*,Auto" ColumnDefinitions="250,*">
+        <Grid Grid.Row="0" Grid.Column="0" RowDefinitions="Auto,*">
             <Grid.Styles>
                 <!-- Main Containers -->
                 <Style Selector="Grid">
-                    <Setter Property="Background" Value="#6941c7"/>
-                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="#6941c7" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
                 </Style>
                 <Style Selector="StackPanel">
-                    <Setter Property="Width" Value="230"/>
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="Width" Value="230" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="10" />
                 </Style>
-                
+
                 <!-- Menu Header -->
                 <Style Selector="Border.MenuHeader">
-                    <Setter Property="Height" Value="60"/>
-                    <Setter Property="Margin" Value="10"/>
-                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="Height" Value="60" />
+                    <Setter Property="Margin" Value="10" />
+                    <Setter Property="CornerRadius" Value="5" />
                     <!-- <Setter Property="Background" Value="#7e56da"/> -->
                 </Style>
                 <Style Selector="Border.MenuHeader WrapPanel">
-                    <Setter Property="Width" Value="{Binding $parent[Border].Bounds.Width}"/>
-                    <Setter Property="Height" Value="{Binding $parent[Border].Bounds.Height}"/>
+                    <Setter Property="Width" Value="{Binding $parent[Border].Bounds.Width}" />
+                    <Setter Property="Height" Value="{Binding $parent[Border].Bounds.Height}" />
                 </Style>
                 <Style Selector="Border.MenuHeader TextBlock">
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="20" />
+                </Style>
+
+                <!-- Menu Body -->
+                <Style Selector="Border.MenuSpacer">
+                    <Setter Property="Height" Value="4" />
+                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="CornerRadius" Value="2" />
+                    <Setter Property="Background" Value="#7e56da" />
                 </Style>
                 
-                <!-- Menu Body -->
-                <Style Selector="Button">
-                    <Setter Property="Height" Value="40"/>
-                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                    <Setter Property="Margin" Value="10, 5"/>
-                    <Setter Property="Background" Value="#6941c7"/>
-                    <Setter Property="CornerRadius" Value="6"/>
-                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                <!-- Navigation button -->
+                <Style Selector="RadioButton">
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border
+                                Background="{TemplateBinding Background}"
+                                Height="40"
+                                CornerRadius="6">
+                                <StackPanel Orientation="Horizontal" Height="{Binding $parent.Height}">
+                                    <Border x:Name="SelectedItem" Width="7" CornerRadius="5"  Margin="10, 5,10,5" />
+
+                                    <ContentPresenter Content="{TemplateBinding Content}" Foreground="White" />
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter>
                 </Style>
-                <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-                    <Setter Property="Background" Value="#7e56da"/>
-                    <Setter Property="TextBlock.Foreground" Value="White"/>
+                
+                <Style Selector="RadioButton:checked /template/ Border#SelectedItem">
+                    <Setter Property="Background" Value="#b092f7" />
                 </Style>
-                <Style Selector="Button > WrapPanel">
-                    <Setter Property="VerticalAlignment" Value="Center"/>
+
+                <Style Selector="RadioButton:pointerover">
+                    <Setter Property="Background" Value="#7e56da" />
                 </Style>
-                <Style Selector="Button > WrapPanel > TextBlock">
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="15, 0, 0, 0"/>
+                <Style Selector="RadioButton > WrapPanel">
+                    <Setter Property="VerticalAlignment" Value="Center" />
                 </Style>
-                <Style Selector="Border.MenuSpacer">
-                    <Setter Property="Height" Value="4"/>
-                    <Setter Property="Margin" Value="5"/>
-                    <Setter Property="CornerRadius" Value="2"/>
-                    <Setter Property="Background" Value="#7e56da"/>
+                <Style Selector="RadioButton > WrapPanel > TextBlock">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="15, 0, 0, 0" />
                 </Style>
             </Grid.Styles>
-            
+
             <StackPanel Grid.Row="0">
-                
+
                 <!-- Header -->
                 <!-- <Border Classes="MenuHeader"> -->
                 <!--     <WrapPanel> -->
@@ -103,50 +105,50 @@
                 <Border Classes="MenuHeader">
                     <TextBlock>Mod Manager</TextBlock>
                 </Border>
-                
+
                 <!-- Menu Body -->
-                <Button Command="{Binding GoNextEmpty}">
+                <RadioButton Command="{Binding GoNextEmpty}">
                     <WrapPanel>
-                        <avalonia:Icon Value="fa-solid fa-house" Foreground="white" FontSize="24"/>
+                        <avalonia:Icon Value="fa-solid fa-house" Foreground="white" FontSize="24" />
                         <TextBlock>Home</TextBlock>
                     </WrapPanel>
-                </Button>
-                
-                <Border Classes="MenuSpacer"/>
-                
-                <Button Command="{Binding GoNext}">
+                </RadioButton>
+
+                <Border Classes="MenuSpacer" />
+
+                <RadioButton Command="{Binding GoNext}">
                     <WrapPanel>
-                        <avalonia:Icon Value="fa-solid fa-puzzle-piece" Foreground="white" FontSize="24"/>
+                        <avalonia:Icon Value="fa-solid fa-puzzle-piece" Foreground="white" FontSize="24" />
                         <TextBlock>Mods</TextBlock>
                     </WrapPanel>
-                </Button>
-                <Button Command="{Binding GoNext}">
+                </RadioButton>
+                <RadioButton Command="{Binding GoNext}">
                     <WrapPanel>
-                        <avalonia:Icon Value="fa-solid fa-map-location-dot" Foreground="white" FontSize="24"/>
+                        <avalonia:Icon Value="fa-solid fa-map-location-dot" Foreground="white" FontSize="24" />
                         <TextBlock>Maps</TextBlock>
                     </WrapPanel>
-                </Button>
-                <Button Command="{Binding GoNext}">
+                </RadioButton>
+                <RadioButton Command="{Binding GoNext}">
                     <WrapPanel>
-                        <avalonia:Icon Value="fa-solid fa-book" Foreground="white" FontSize="24"/>
+                        <avalonia:Icon Value="fa-solid fa-book" Foreground="white" FontSize="24" />
                         <TextBlock>Guides</TextBlock>
                     </WrapPanel>
-                </Button>
-                <Button Command="{Binding GoNext}">
+                </RadioButton>
+                <RadioButton Command="{Binding GoNext}">
                     <WrapPanel>
-                        <avalonia:Icon Value="fa-solid fa-rss" Foreground="white" FontSize="24"/>
+                        <avalonia:Icon Value="fa-solid fa-rss" Foreground="white" FontSize="24" />
                         <TextBlock>Subscriptions</TextBlock>
                     </WrapPanel>
-                </Button>
-                
+                </RadioButton>
+
             </StackPanel>
         </Grid>
-        
+
         <reactiveUi:RoutedViewHost Grid.Column="1" Grid.Row="0" Router="{Binding NavigationService.Router}">
             <reactiveUi:RoutedViewHost.DefaultContent>
-        
+
                 <TextBlock Text="Default content" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        
+
             </reactiveUi:RoutedViewHost.DefaultContent>
         </reactiveUi:RoutedViewHost>
     </Grid>

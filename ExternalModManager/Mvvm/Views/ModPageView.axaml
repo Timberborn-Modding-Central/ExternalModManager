@@ -19,52 +19,146 @@
     <!--     <controls:ModIOGalleryItem/> -->
     <!-- </WrapPanel> -->
     
-    <Grid>
+    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
+        
+        <!-- <Grid.Styles> -->
+        <!--     <Style Selector="Grid"> -->
+        <!--         <Setter Property="ShowGridLines" Value="True" /> -->
+        <!--     </Style> -->
+        <!-- </Grid.Styles> -->
         
     
-        <Border ClipToBounds="True" Width="300" Height="300" CornerRadius="15" Background="#7e56da" Padding="5">
-            <Grid RowDefinitions="Auto,*,Auto,Auto" ColumnDefinitions="*">
-                <Border Grid.Row="0" ClipToBounds="True" CornerRadius="10" >
-                    <Image Source="/Assets/ChooChoo.png" />
+        <!-- <Border Grid.Column="0" ClipToBounds="True" Width="300" Height="300" CornerRadius="15" Background="#7e56da" Padding="5"> -->
+        <!--     <Grid RowDefinitions="Auto,*,Auto,Auto" ColumnDefinitions="*"> -->
+        <!--         <Border Grid.Row="0" ClipToBounds="True" CornerRadius="10"  > -->
+        <!--             <Grid> -->
+        <!--                 <Image Source="/Assets/ChooChoo.png" /> -->
+        <!--                 <Grid RowDefinitions="Auto,Auto" VerticalAlignment="Bottom" Background="#90000000"> -->
+        <!--                     <Label Grid.Row="0">Choo! Choo!</Label> -->
+        <!--                     <Grid Grid.Row="1" RowDefinitions="*" ColumnDefinitions="*,*,*,*"> -->
+        <!--                         <WrapPanel Grid.Column="0" Margin="5"> -->
+        <!--                             <avalonia:Icon Value="fa-cloud-arrow-down" Foreground="white" FontSize="12" Margin="5"/> -->
+        <!--                             <TextBlock VerticalAlignment="Center" FontSize="8">27k</TextBlock> -->
+        <!--                         </WrapPanel> -->
+        <!--                         <WrapPanel Grid.Column="1" Margin="5"> -->
+        <!--                             <avalonia:Icon Value="fa-solid fa-fire" Foreground="white" FontSize="12" Margin="5"/> -->
+        <!--                             <TextBlock VerticalAlignment="Center" FontSize="8">10ᵗʰ</TextBlock> -->
+        <!--                         </WrapPanel> -->
+        <!--                         <WrapPanel Grid.Column="2" Margin="5"> -->
+        <!--                             <avalonia:Icon Value="fa-solid fa-download" Foreground="white" FontSize="12" Margin="5"/> -->
+        <!--                             <TextBlock VerticalAlignment="Center" FontSize="8">102</TextBlock> -->
+        <!--                         </WrapPanel> -->
+        <!--                         <WrapPanel Grid.Column="3" Margin="5"> -->
+        <!--                             <avalonia:Icon Value="fa-solid fa-database" Foreground="white" FontSize="12" Margin="5"/> -->
+        <!--                             <TextBlock VerticalAlignment="Center" FontSize="8">55.8 MB</TextBlock> -->
+        <!--                         </WrapPanel> -->
+        <!--                     </Grid> -->
+        <!--                 </Grid> -->
+        <!--             </Grid> -->
+        <!--         </Border> -->
+        <!--         ~1~ <Label Grid.Row="1"  @1@ -->
+        <!--         ~1~        HorizontalAlignment="Center"  @1@ -->
+        <!--         ~1~        FontSize="24" @1@ -->
+        <!--         ~1~        FontWeight="DemiBold"> @1@ -->
+        <!--         ~1~     ChooChoo @1@ -->
+        <!--         ~1~ </Label> @1@ -->
+        <!--         <Border Grid.Row="2"> -->
+        <!--             <Border.Styles> -->
+        <!--                 <Style Selector="Border"> -->
+        <!--                     <Setter Property="Height" Value="4" /> -->
+        <!--                     <Setter Property="Margin" Value="5" /> -->
+        <!--                     <Setter Property="CornerRadius" Value="2" /> -->
+        <!--                     <Setter Property="Background" Value="#b092f7" /> -->
+        <!--                 </Style> -->
+        <!--             </Border.Styles> -->
+        <!--             ~1~ <Separator/> @1@ -->
+        <!--         </Border> -->
+        <!--     </Grid> -->
+        <!-- </Border> -->
+        <!-- -->
+        <!-- -->
+        <!-- <Border Grid.Column="1" ClipToBounds="True" Width="300" Height="300" CornerRadius="5" Background="#7e56da" Padding="5"> -->
+        <!--     <Grid RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="*"> -->
+        <!--         <Border Grid.Row="0" Grid.RowSpan="2" ClipToBounds="True" CornerRadius="3"  > -->
+        <!--             <Image Source="/Assets/ChooChoo.png" /> -->
+        <!--         </Border> -->
+        <!--         <Border Grid.Row="1" Grid.RowSpan="2" Background="#90000000" CornerRadius="3" > -->
+        <!--              -->
+        <!--             <Grid RowDefinitions="Auto,Auto" VerticalAlignment="Bottom"> -->
+        <!--                 <Label Grid.Row="0">Choo! Choo!</Label> -->
+        <!--                 <Grid Grid.Row="1" RowDefinitions="*" ColumnDefinitions="*,*,*,*"> -->
+        <!--                     <Border Grid.Column="0" Background="#6941c7" CornerRadius="3" Margin="2"> -->
+        <!--                         <WrapPanel> -->
+        <!--                             <avalonia:Icon Value="fa-cloud-arrow-down" Foreground="white" FontSize="12" Margin="5" VerticalAlignment="Center"/> -->
+        <!--                             <TextBlock VerticalAlignment="Center" FontSize="8">27k</TextBlock> -->
+        <!--                         </WrapPanel> -->
+        <!--                     </Border> -->
+        <!--                     <WrapPanel Grid.Column="1" > -->
+        <!--                         <avalonia:Icon Value="fa-solid fa-fire" Foreground="white" FontSize="12" Margin="5" VerticalAlignment="Center"/> -->
+        <!--                         <TextBlock VerticalAlignment="Center" FontSize="8">10ᵗʰ</TextBlock> -->
+        <!--                     </WrapPanel> -->
+        <!--                     <WrapPanel Grid.Column="2" > -->
+        <!--                         <avalonia:Icon Value="fa-solid fa-download" Foreground="white" FontSize="12" Margin="5" VerticalAlignment="Center"/> -->
+        <!--                         <TextBlock VerticalAlignment="Center" FontSize="8">102</TextBlock> -->
+        <!--                     </WrapPanel> -->
+        <!--                     <WrapPanel Grid.Column="3" > -->
+        <!--                         <avalonia:Icon Value="fa-solid fa-database" Foreground="white" FontSize="12" Margin="5" VerticalAlignment="Center"/> -->
+        <!--                         <TextBlock VerticalAlignment="Center" FontSize="8">55.8 MB</TextBlock> -->
+        <!--                     </WrapPanel> -->
+        <!--                 </Grid> -->
+        <!--             </Grid> -->
+        <!--         </Border> -->
+        <!--          -->
+        <!--         <Separator Grid.Row="3" Background="#b092f7"/> -->
+        <!--          -->
+        <!--     </Grid> -->
+        <!-- </Border> -->
+        
+        <Border Grid.Column="2" ClipToBounds="True" Width="300" Height="300" CornerRadius="5" Background="#7e56da" Padding="5">
+            <Grid RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="*">
+                <Border Grid.Row="0" ClipToBounds="True" CornerRadius="3"  >
+                    <Grid>
+                        <Image Source="/Assets/ChooChoo.png" />
+                        <Grid RowDefinitions="Auto,Auto" VerticalAlignment="Bottom" Background="#90000000">
+                            <Label Grid.Row="0">Choo! Choo!</Label>
+                        </Grid>
+                    </Grid>
                 </Border>
-                <Label Grid.Row="1" 
-                       HorizontalAlignment="Center" 
-                       FontSize="24"
-                       FontWeight="DemiBold">
-                    ChooChoo
-                </Label>
-                <Border Grid.Row="2">
-                    <Border.Styles>
-                        <Style Selector="Border">
-                            <Setter Property="Height" Value="4" />
-                            <Setter Property="Margin" Value="5" />
-                            <Setter Property="CornerRadius" Value="2" />
-                            <Setter Property="Background" Value="#b092f7" />
-                        </Style>
-                    </Border.Styles>
-                </Border>
-                <Grid Grid.Row="3" RowDefinitions="*" ColumnDefinitions="*,*,*,*">
-                    <WrapPanel Grid.Column="0" Margin="10">
-                        <avalonia:Icon Value="fa-cloud-arrow-down" Foreground="white" FontSize="18" Margin="5"/>
-                        <TextBlock VerticalAlignment="Center" FontSize="12">27k</TextBlock>
-                    </WrapPanel>
-                    <WrapPanel Grid.Column="1" Margin="10">
-                        <avalonia:Icon Value="fa-solid fa-fire" Foreground="white" FontSize="18" Margin="5"/>
-                        <TextBlock VerticalAlignment="Center" FontSize="12">10ᵗʰ</TextBlock>
-                    </WrapPanel>
-                    <WrapPanel Grid.Column="2" Margin="10">
-                        <avalonia:Icon Value="fa-solid fa-download" Foreground="white" FontSize="18" Margin="5"/>
-                        <TextBlock VerticalAlignment="Center" FontSize="12">102</TextBlock>
-                    </WrapPanel>
-                    <WrapPanel Grid.Column="3" Margin="10">
-                        <avalonia:Icon Value="fa-solid fa-database" Foreground="white" FontSize="18" Margin="5"/>
-                        <TextBlock VerticalAlignment="Center" FontSize="12">55.8 MB</TextBlock>
-                    </WrapPanel>
+                
+                <Separator Grid.Row="1" Background="#b092f7"/>
+                
+                <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*">
+                    <Border Grid.Column="0" CornerRadius="2" Background="#50000000" Margin="3">
+                        <WrapPanel Margin="5">
+                            <avalonia:Icon Value="fa-cloud-arrow-down" Foreground="white" FontSize="12"  Margin="0 0 5 0"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="8">27k</TextBlock>
+                        </WrapPanel>
+                    </Border>
+                    <Border Grid.Column="1" CornerRadius="2" Background="#50000000" Margin="3">
+                        <WrapPanel Margin="5">
+                            <avalonia:Icon Value="fa-fire" Foreground="white" FontSize="12"  Margin="0 0 5 0"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="8">10ᵗʰ</TextBlock>
+                        </WrapPanel>
+                    </Border>
+                    <Border Grid.Column="2" CornerRadius="2" Background="#50000000" Margin="3">
+                        <WrapPanel Margin="5">
+                            <avalonia:Icon Value="fa-download" Foreground="white" FontSize="12"  Margin="0 0 5 0"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="8">102</TextBlock>
+                        </WrapPanel>
+                    </Border>
+                    <Border Grid.Column="3" CornerRadius="2" Background="#50000000" Margin="3">
+                        <WrapPanel Margin="5">
+                            <avalonia:Icon Value="fa-database" Foreground="white" FontSize="12"  Margin="0 0 5 0"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="8">55.8 MB</TextBlock>
+                        </WrapPanel>
+                    </Border>
                 </Grid>
+                
+                
             </Grid>
         </Border>
         
-        <Button Command="{Binding OpenFlyout}">Open Flyout</Button>
+        <Button Grid.Column="4" Command="{Binding OpenFlyout}">Open Flyout</Button>
         
     </Grid>
     

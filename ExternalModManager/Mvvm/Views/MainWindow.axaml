@@ -38,8 +38,9 @@
                     </WrapPanel>
                 </RadioButton>
 
-                <Border Classes="MenuSpacer" />
-
+                <!-- <Border Classes="MenuSpacer" /> -->
+                <Separator/>
+                
                 <RadioButton Command="{Binding GoModView}">
                     <WrapPanel>
                         <avalonia:Icon Value="fa-solid fa-puzzle-piece" Foreground="white" FontSize="24" />

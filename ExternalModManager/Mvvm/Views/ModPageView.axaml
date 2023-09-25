@@ -1,0 +1,71 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:ExternalModManager.Mvvm.ViewModels"
+             xmlns:avalonia="https://github.com/projektanker/icons.avalonia"
+             xmlns:controls="clr-namespace:ExternalModManager.Controls"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExternalModManager.Mvvm.Views.ModPageView"
+             x:DataType="viewModels:ModPageViewModel">
+    <Design.DataContext>
+        <viewModels:ModPageViewModel/>
+    </Design.DataContext>
+    
+    <!-- <WrapPanel> -->
+    <!--     <controls:ModIOGalleryItem/> -->
+    <!--     <controls:ModIOGalleryItem/> -->
+    <!--     <controls:ModIOGalleryItem/> -->
+    <!--     <controls:ModIOGalleryItem/> -->
+    <!-- </WrapPanel> -->
+    
+    <Grid>
+        
+    
+        <Border ClipToBounds="True" Width="300" Height="300" CornerRadius="15" Background="#7e56da" Padding="5">
+            <Grid RowDefinitions="Auto,*,Auto,Auto" ColumnDefinitions="*">
+                <Border Grid.Row="0" ClipToBounds="True" CornerRadius="10" >
+                    <Image Source="/Assets/ChooChoo.png" />
+                </Border>
+                <Label Grid.Row="1" 
+                       HorizontalAlignment="Center" 
+                       FontSize="24"
+                       FontWeight="DemiBold">
+                    ChooChoo
+                </Label>
+                <Border Grid.Row="2">
+                    <Border.Styles>
+                        <Style Selector="Border">
+                            <Setter Property="Height" Value="4" />
+                            <Setter Property="Margin" Value="5" />
+                            <Setter Property="CornerRadius" Value="2" />
+                            <Setter Property="Background" Value="#b092f7" />
+                        </Style>
+                    </Border.Styles>
+                </Border>
+                <Grid Grid.Row="3" RowDefinitions="*" ColumnDefinitions="*,*,*,*">
+                    <WrapPanel Grid.Column="0" Margin="10">
+                        <avalonia:Icon Value="fa-cloud-arrow-down" Foreground="white" FontSize="18" Margin="5"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="12">27k</TextBlock>
+                    </WrapPanel>
+                    <WrapPanel Grid.Column="1" Margin="10">
+                        <avalonia:Icon Value="fa-solid fa-fire" Foreground="white" FontSize="18" Margin="5"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="12">10ᵗʰ</TextBlock>
+                    </WrapPanel>
+                    <WrapPanel Grid.Column="2" Margin="10">
+                        <avalonia:Icon Value="fa-solid fa-download" Foreground="white" FontSize="18" Margin="5"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="12">102</TextBlock>
+                    </WrapPanel>
+                    <WrapPanel Grid.Column="3" Margin="10">
+                        <avalonia:Icon Value="fa-solid fa-database" Foreground="white" FontSize="18" Margin="5"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="12">55.8 MB</TextBlock>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        
+        <Button Command="{Binding OpenFlyout}">Open Flyout</Button>
+        
+    </Grid>
+    
+</UserControl>

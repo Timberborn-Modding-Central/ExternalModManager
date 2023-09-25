@@ -32,4 +32,12 @@
     <ItemGroup>
       <AdditionalFiles Include="Mvvm\Views\MainWindow.axaml" />
     </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Mvvm\Views\ModPageView.axaml.cs">
+        <DependentUpon>ModPageView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

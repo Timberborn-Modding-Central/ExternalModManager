@@ -14,6 +14,7 @@ public static class DependencyContainer
     public static void SetupConfigurator(ContainerBuilder builder)
     {
         builder.RegisterView<FirstPageView, FirstPageViewModel>();
+        builder.RegisterView<ModPageView, ModPageViewModel>();
         
         builder.RegisterType<NavigationService>().AsSelf();
         
